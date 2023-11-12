@@ -5,14 +5,16 @@ import Footer from "./Components/Footer";
 
 export default function Home() {
   return (
-    <div className="bg-[#040D12] flex flex-col min-h-screen">
-      <Naviagation />
+    <div className="bg-[#040D12] ">
+      <div className="flex flex-col min-h-screen mx-20">
+        <Naviagation />
 
-      <div className="flex-1 pl-5 pr-5 flex justify-center ">
-        <About />
+        <div className="flex-1 pl-5 pr-5 flex justify-center ">
+          <About />
+        </div>
+
+        <Footer />
       </div>
-
-      <Footer />
     </div>
   );
 }
