@@ -1,3 +1,6 @@
+import Badge from "./Badge";
+import Card from "./Card";
+
 const About: React.FC = () => {
   const frontEndSkills: string[] = [
     "HTML",
@@ -58,47 +61,21 @@ const About: React.FC = () => {
       <div>
         <p className="font-bold text-lg font-mono mb-2">Recent Technologies:</p>
         <div className="flex flex-col md:flex-row">
-          <div className="md:w-1/3">
-            <p className="font-semibold font-mono mb-1">Front-End:</p>
+          <Card title="Front-End:">
             {frontEndSkills.map((item: string, index: number) => {
-              return (
-                <p
-                  key={index++}
-                  className=" mt-1 mb-1 md:mr-1 badge badge-sm text-[14px] font-mono text-[#02aab0] font-bold hover:underline hover:cursor-pointer"
-                >
-                  {item}
-                </p>
-              );
+              return <Badge key={index++} item={item} />;
             })}
-          </div>
-
-          <div className="md:w-1/3 mt-1 md:mt-0">
-            <p className="font-semibold font-mono">Backend:</p>
+          </Card>
+          <Card title="Backend:">
             {backEndSkills.map((item: string, index: number) => {
-              return (
-                <p
-                  key={index++}
-                  className=" mt-1 mb-1 md:mr-1 badge badge-sm text-[14px] font-mono text-[#02aab0] font-bold hover:underline hover:cursor-pointer"
-                >
-                  {item}
-                </p>
-              );
+              return <Badge key={index++} item={item} />;
             })}
-          </div>
-
-          <div className="md:w-1/3 mt-1 md:mt-0">
-            <p className="font-semibold font-mono">Familiar:</p>
+          </Card>
+          <Card title="Familiar:">
             {familiarSkills.map((item: string, index: number) => {
-              return (
-                <p
-                  key={index++}
-                  className=" mt-1 mb-1 md:mr-1 badge badge-sm text-[14px] font-mono text-[#02aab0] font-bold hover:underline hover:cursor-pointer"
-                >
-                  {item}
-                </p>
-              );
+              return <Badge key={index++} item={item} />;
             })}
-          </div>
+          </Card>
         </div>
       </div>
     </div>

@@ -71,7 +71,7 @@ const Naviagation: React.FC = () => {
           </li>
           <li>
             <Link
-              href="#about"
+              href="#projects"
               className="font-mono font-semibold hover:text-[#02aab0]"
             >
               Projects
