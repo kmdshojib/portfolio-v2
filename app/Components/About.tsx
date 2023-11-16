@@ -30,11 +30,11 @@ const About: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col">
-      <h1 className="text-3xl md:text-5xl font-mono font-black mb-3">
+    <div className="flex flex-col mt-5">
+      <h1 className="text-xl md:text-5xl font-mono font-black mb-3">
         Kamruzamn Shojib
       </h1>
-      <p className="font-mono text-lg">
+      <p className="font-mono text-sm md:text-lg">
         <span className="underline decoration-[#02aab0] font-bold">
           Full Stack
         </span>
@@ -42,7 +42,7 @@ const About: React.FC = () => {
       </p>
       <br />
       {/* description */}
-      <p className="font-mono text-justify ">
+      <p className="font-mono text-justify text-xs md:text-sm">
         Passionate about digital experiences, my web development journey began
         in 2021. From the first console &quot;Hello World&quot; I delved into
         the intricacies of software development. As a{" "}
