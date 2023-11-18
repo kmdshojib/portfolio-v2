@@ -40,9 +40,10 @@ const About: React.FC = () => {
         </span>
         <> </> Developer
       </p>
+      
       <br />
       {/* description */}
-      <p className="font-mono text-justify text-xs md:text-sm">
+      <p className="font-mono text-justify text-sm md:text-base">
         Passionate about digital experiences, my web development journey began
         in 2021. From the first console &quot;Hello World&quot; I delved into
         the intricacies of software development. As a{" "}
