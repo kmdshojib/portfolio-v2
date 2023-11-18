@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Naviagation from "./Components/Navigation/Naviagation";
 import About from "./Components/About";
 import Footer from "./Components/Footer";
@@ -13,7 +12,7 @@ export default function Home() {
         <div className="flex-1 pl-5 pr-5 flex flex-col justify-center ">
           <About />
           <Projects />
-          {/* <Contact /> */}
+          <Contact />
         </div>
 
         <Footer />
