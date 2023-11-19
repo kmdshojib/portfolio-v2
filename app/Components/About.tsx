@@ -40,21 +40,15 @@ const About: React.FC = () => {
         </span>
         <> </> Developer
       </p>
-      
+
       <br />
       {/* description */}
       <p className="font-mono text-justify text-sm md:text-base">
-        Passionate about digital experiences, my web development journey began
-        in 2021. From the first console &quot;Hello World&quot; I delved into
-        the intricacies of software development. As a{" "}
-        <span className="font-bold text-neutral-500">Full Stack Developer</span>
-        , I thrive on dynamic challenges in creating and enhancing online
-        environments. Beyond a profession, software development is my constant
-        muse, propelling me to embrace the ever-evolving landscape and
-        consistently push the boundaries of my knowledge. Join me on this
-        exciting expedition where each line of code is a brushstroke on the
-        canvas of innovation, and every project is an opportunity for growth and
-        refinement.
+        Enthusiastic{" "}
+        <span className="font-bold text-neutral-500">Full Stack Developer</span>{" "}
+        Developer since 2021, passionate about pushing the boundaries of web
+        development. Embracing innovation, I view each line of code as a
+        brushstroke on the canvas of digital experiences.
       </p>
       <br />
       <br />

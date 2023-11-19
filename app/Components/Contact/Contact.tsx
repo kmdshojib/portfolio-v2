@@ -1,11 +1,13 @@
+"use client";
 import React from "react";
-import { useForm } from "react-hook-form";
+import { useForm, FieldError } from "react-hook-form";
 
-type FormData = {
+interface FormData {
   name: string;
   email: string;
   message: string;
-};
+  errors: FieldError;
+}
 
 const Contact: React.FC = () => {
   const {
@@ -13,28 +15,45 @@ const Contact: React.FC = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>();
-
+  const handleMessage = (data: {
+    name: string;
+    email: string;
+    message: string;
+  }) => {
+    console.log(data);
+  };
   return (
     <div id="contact">
       <p className="font-bold text-lg font-mono mb-2">Get in Touch</p>
       <div>
-        <form className="flex flex-col justify-center items-center">
+        <form
+          onSubmit={handleSubmit(handleMessage)}
+          className="flex flex-col justify-center items-center"
+        >
           <input
             type="text"
             placeholder="Name"
-            className="input input-bordered w-full max-w-xs bg-[#040D12] focus:border-[#02aab0] focus:border-[1.5px] placeholder:font-mono"
-            {...register("name")}
+            className={`input input-bordered w-full max-w-xs bg-[#040D12] focus:border-[#02aab0] focus:border-[1.5px] placeholder:font-mono ${
+              errors.name ? "focus:border-rose-500" : "focus:border-[#02aab0]"
+            }`}
+            {...register("name", { required: true })}
           />
           <input
             type="email"
             placeholder="Email"
-            className="input input-bordered w-full max-w-xs bg-[#040D12] focus:border-[#02aab0] focus:border-[1.5px] placeholder:font-mono"
-            {...(register("email"), { required: true })}
+            name="email"
+            className={`input input-bordered w-full max-w-xs bg-[#040D12] focus:border-[#02aab0] focus:border-[1.5px] placeholder:font-mono ${
+              errors.email ? "focus:border-rose-500" : "focus:border-[#02aab0]"
+            }`}
+            {...register("email", { required: true })}
           />
           <textarea
-            className="textarea textarea-bordered w-full max-w-xs bg-[#040D12] focus:border-[#02aab0] focus:border-[1.5px] placeholder:font-mono"
+          
+            className={`textarea textarea-bordered w-full max-w-xs bg-[#040D12] focus:border-[#02aab0] focus:border-[1.5px] placeholder:font-mono ${
+              errors.message ? "focus:border-rose-500" : "focus:border-[#02aab0]"
+            }`}
             placeholder="Type Your Message "
-            {...register("message")}
+            {...register("message", { required: true })}
           ></textarea>
           <button
             type="submit"
