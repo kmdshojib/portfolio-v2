@@ -3,6 +3,8 @@ import About from "./Components/About";
 import Footer from "./Components/Footer";
 import Projects from "./Components/Projects";
 import Contact from "./Components/Contact/Contact";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 export default function Home() {
   return (
@@ -17,6 +19,7 @@ export default function Home() {
 
         <Footer />
       </div>
+      <ToastContainer />
     </div>
   );
 }

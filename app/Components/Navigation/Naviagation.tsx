@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { animateScroll as scroll } from "react-scroll";
+import { animateScroll as scroll, Link as ScrollLink } from "react-scroll";
 import "./navigation.css";
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -89,31 +89,37 @@ const Navigation = () => {
           </svg>
         </Link>
       </div>
-      <div className="flex-none hidden md:block">
+      <div className="flex-none hidden md:block mr-20">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link
-              href="#about"
+            <ScrollLink
+              to="about"
+              spy={true}
+              smooth={true}
               className="font-mono font-semibold hover:text-[#02aab0]"
             >
               About
-            </Link>
+            </ScrollLink>
           </li>
           <li>
-            <Link
-              href="#projects"
+            <ScrollLink
+              to="projects"
+              spy={true}
+              smooth={true}
               className="font-mono font-semibold hover:text-[#02aab0]"
             >
               Projects
-            </Link>
+            </ScrollLink>
           </li>
           <li>
-            <Link
-              href="#contact"
+            <ScrollLink
+              to="contact"
+              spy={true}
+              smooth={true}
               className="font-mono font-semibold hover:text-[#02aab0]"
             >
               Contact
-            </Link>
+            </ScrollLink>
           </li>
         </ul>
       </div>

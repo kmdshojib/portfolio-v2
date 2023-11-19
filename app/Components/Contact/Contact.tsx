@@ -13,17 +13,31 @@ const Contact: React.FC = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormData>();
-  const handleMessage = (data: {
+  const handleMessage = async (data: {
     name: string;
     email: string;
     message: string;
   }) => {
-    console.log(data);
+    const apiEndpoint = "/api/email";
+   
+    fetch(apiEndpoint, {
+      method: "POST",
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        reset()
+        alert(response.message);
+      })
+      .catch((err) => {
+        alert(err);
+      });
   };
   return (
-    <div id="contact">
+    <div name="contact" id="contact">
       <p className="font-bold text-lg font-mono mb-2">Get in Touch</p>
       <div>
         <form
@@ -48,9 +62,10 @@ const Contact: React.FC = () => {
             {...register("email", { required: true })}
           />
           <textarea
-          
             className={`textarea textarea-bordered w-full max-w-xs bg-[#040D12] focus:border-[#02aab0] focus:border-[1.5px] placeholder:font-mono ${
-              errors.message ? "focus:border-rose-500" : "focus:border-[#02aab0]"
+              errors.message
+                ? "focus:border-rose-500"
+                : "focus:border-[#02aab0]"
             }`}
             placeholder="Type Your Message "
             {...register("message", { required: true })}

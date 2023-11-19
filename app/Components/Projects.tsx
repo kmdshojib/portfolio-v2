@@ -8,7 +8,7 @@ import laptopSourceImage from "../asset/laptopSource.png";
 
 const Projects = () => {
   return (
-    <div id="projects">
+    <div name="peojects" id="projects">
       <p className="font-bold text-lg font-mono mb-2">Projects</p>
       <ProjectCard
         imageURl={gadgetGalaxyImage}
