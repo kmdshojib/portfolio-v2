@@ -30,7 +30,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <div name="about" className="flex flex-col mt-5">
+    <div data-name="about" id="about" className="flex flex-col mt-5">
       <h1 className="text-xl md:text-5xl font-mono font-black mb-3">
         Kamruzamn Shojib
       </h1>

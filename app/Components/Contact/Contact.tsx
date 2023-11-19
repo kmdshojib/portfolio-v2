@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useForm, FieldError } from "react-hook-form";
-
+import { toast } from "react-toastify";
 interface FormData {
   name: string;
   email: string;
@@ -22,18 +22,18 @@ const Contact: React.FC = () => {
     message: string;
   }) => {
     const apiEndpoint = "/api/email";
-   
+
     fetch(apiEndpoint, {
       method: "POST",
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((response) => {
-        reset()
-        alert(response.message);
+        reset();
+        toast.success(response.message);
       })
       .catch((err) => {
-        alert(err);
+        toast.error(err);
       });
   };
   return (

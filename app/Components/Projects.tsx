@@ -6,9 +6,9 @@ import ProjectCard from "./ProjectCard/ProjectCard";
 import gadgetGalaxyImage from "../asset/galaxygadget.png";
 import laptopSourceImage from "../asset/laptopSource.png";
 
-const Projects = () => {
+const Projects: React.FC = () => {
   return (
-    <div name="peojects" id="projects">
+    <div data-name="peojects" id="projects">
       <p className="font-bold text-lg font-mono mb-2">Projects</p>
       <ProjectCard
         imageURl={gadgetGalaxyImage}
