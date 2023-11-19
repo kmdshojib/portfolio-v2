@@ -53,11 +53,11 @@ const MobileMenu = () => {
             htmlFor="my-drawer"
             aria-label="close sidebar"
             className="drawer-overlay"
-            onClick={handleDrawerToggle}
+            
           ></label>
           <div className="menu p-5 w-80 min-h-full bg-[#040D12] text-base-content">
             {/* Sidebar content here */}
-            <div
+            <div className="cursor-pointer"
               onClick={() => {
                 scrollToTop();
               }}
@@ -66,7 +66,7 @@ const MobileMenu = () => {
             </div>
             <div className="mt-5 flex flex-col">
               <div
-                className="font-mono font-semibold hover:text-[#02aab0] text-lg mb-5"
+                className="font-mono font-semibold hover:text-[#02aab0] text-lg mb-5 cursor-pointer"
                 onClick={() => {
                   scrollToTop();
                 }}
@@ -77,7 +77,7 @@ const MobileMenu = () => {
                 to="projects"
                 spy={true}
                 smooth={true}
-                className="font-mono font-semibold hover:text-[#02aab0] text-lg mb-5"
+                className="font-mono font-semibold hover:text-[#02aab0] text-lg mb-5 cursor-pointer"
                 onClick={() => {
                   handleDrawerToggle();
                 }}
@@ -88,7 +88,7 @@ const MobileMenu = () => {
                 to="contact"
                 spy={true}
                 smooth={true}
-                className="font-mono font-semibold hover:text-[#02aab0] text-lg mb-5"
+                className="font-mono font-semibold hover:text-[#02aab0] text-lg mb-5 cursor-pointer"
                 onClick={() => {
                   handleDrawerToggle();
                 }}

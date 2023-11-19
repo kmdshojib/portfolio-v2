@@ -1,6 +1,7 @@
 import Badge from "./Badge";
 import Card from "./Card";
-
+import Link from "next/link";
+// import Resume from "../Kamruzaman_Shojib_Full-Stack _Resume.pdf"
 const About: React.FC = () => {
   const frontEndSkills: string[] = [
     "HTML",
@@ -40,6 +41,10 @@ const About: React.FC = () => {
         </span>
         <> </> Developer
       </p>
+      <Link href="https://drive.google.com/file/d/1q_hljFoCgs8V5D2gBarUD3x6Mcsz75yV/view?usp=sharing" target="_blank" className="font-mono text-sm md:text-lg mt-4">
+        See{" "}
+        <span className="underline decoration-[#02aab0] font-bold">Resume</span>
+      </Link>
 
       <br />
       {/* description */}
