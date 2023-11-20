@@ -23,7 +23,7 @@ const Contact: React.FC = () => {
   }) => {
     const apiEndpoint = "/api/email";
 
-    fetch(apiEndpoint, {
+     fetch(apiEndpoint, {
       method: "POST",
       body: JSON.stringify(data),
     })

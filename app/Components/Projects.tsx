@@ -1,7 +1,5 @@
 import React from "react";
-import Card from "./Card";
 import Badge from "./Badge";
-import Link from "next/link";
 import ProjectCard from "./ProjectCard/ProjectCard";
 import gadgetGalaxyImage from "../asset/galaxygadget.png";
 import laptopSourceImage from "../asset/laptopSource.png";
