@@ -30,7 +30,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <div className=" rounded-lg border border-transparent px-5 py-4  transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
       <div className="flex flex-col md:flex-row">
         <Image
-          className="w-full object-contain mr-0 md:mr-2 md:w-1/4"
+          className="w-full object-contain mr-0 mb-2 md:mb-0 md:mr-2 md:w-1/4"
           width={100}
           height={100}
           alt="peoject-image"

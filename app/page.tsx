@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="bg-[#040D12] ">
       <Naviagation />
-      <div className="flex flex-col min-h-screen mx-20">
+      <div className="flex flex-col min-h-screen mx-8 md:mx-20">
         <div className="flex-1 pl-5 pr-5 flex flex-col justify-center ">
           <About />
           <Projects />

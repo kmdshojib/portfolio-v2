@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
       });
   };
   return (
-    <div name="contact" id="contact">
+    <div data-name="contact" id="contact">
       <p className="font-bold text-lg font-mono mb-2">Get in Touch</p>
       <div>
         <form

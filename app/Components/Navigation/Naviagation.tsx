@@ -32,7 +32,7 @@ const Navigation = () => {
         scrolled ? "bg-blurred fixed shadow-xl" : "bg-transparent"
       } shadow-xl mb-2`}
     >
-      <div className="flex-1 mx-14">
+      <div className="flex-1 mx-5 md:mx-14">
         <Link
           href="/"
           className="btn btn-ghost normal-case text-xl"
@@ -75,7 +75,7 @@ const Navigation = () => {
           </li>
         </ul>
       </div>
-      <div className="block md:hidden mr-20">
+      <div className="block md:hidden mr-10">
         <MobileMenu />
       </div>
     </div>
