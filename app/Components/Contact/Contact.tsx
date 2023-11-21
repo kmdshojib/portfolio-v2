@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
-import { useForm, FieldError } from "react-hook-form";
+import { useForm, FieldValues, FieldError } from "react-hook-form";
 import { toast } from "react-toastify";
+
 interface FormData {
   name: string;
   email: string;
