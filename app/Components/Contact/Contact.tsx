@@ -9,13 +9,21 @@ interface FormData {
   errors: FieldError;
 }
 
+interface CustomFormState extends FieldValues {
+  errors: {
+    name?: FieldError;
+    email?: FieldError;
+    message?: FieldError;
+  };
+}
+
 const Contact: React.FC = () => {
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<FormData>();
+  } = useForm<FormData, CustomFormState>();
   const handleMessage = async (data: {
     name: string;
     email: string;
@@ -23,7 +31,7 @@ const Contact: React.FC = () => {
   }) => {
     const apiEndpoint = "/api/email";
 
-     fetch(apiEndpoint, {
+    fetch(apiEndpoint, {
       method: "POST",
       body: JSON.stringify(data),
     })
