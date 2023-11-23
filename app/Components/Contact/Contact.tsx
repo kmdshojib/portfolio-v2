@@ -56,28 +56,30 @@ const Contact: React.FC = () => {
           <input
             type="text"
             placeholder="Name"
+            name="name"
+            {...register("name", { required: true })}
             className={`input input-bordered w-full max-w-xs bg-[#040D12] focus:border-[#02aab0] focus:border-[1.5px] placeholder:font-mono ${
               errors.name ? "focus:border-rose-500" : "focus:border-[#02aab0]"
             }`}
-            {...register("name", { required: true })}
           />
           <input
             type="email"
             placeholder="Email"
             name="email"
+            {...register("email", { required: true })}
             className={`input input-bordered w-full max-w-xs bg-[#040D12] focus:border-[#02aab0] focus:border-[1.5px] placeholder:font-mono ${
               errors.email ? "focus:border-rose-500" : "focus:border-[#02aab0]"
             }`}
-            {...register("email", { required: true })}
           />
           <textarea
+            name="message"
+            {...register("message", { required: true })}
             className={`textarea textarea-bordered w-full max-w-xs bg-[#040D12] focus:border-[#02aab0] focus:border-[1.5px] placeholder:font-mono ${
               errors.message
                 ? "focus:border-rose-500"
                 : "focus:border-[#02aab0]"
             }`}
             placeholder="Type Your Message "
-            {...register("message", { required: true })}
           ></textarea>
           <button
             type="submit"
