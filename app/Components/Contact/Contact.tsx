@@ -7,7 +7,6 @@ interface FormData {
   name: string;
   email: string;
   message: string;
-  errors: FieldError;
 }
 
 interface CustomFormState extends FieldValues {
@@ -25,11 +24,8 @@ const Contact: React.FC = () => {
     reset,
     formState: { errors },
   } = useForm<FormData, CustomFormState>();
-  const handleMessage = async (data: {
-    name: string;
-    email: string;
-    message: string;
-  }) => {
+
+  const handleMessage = async (data: FormData) => {
     const apiEndpoint = "/api/email";
 
     fetch(apiEndpoint, {
@@ -45,6 +41,7 @@ const Contact: React.FC = () => {
         toast.error(err);
       });
   };
+
   return (
     <div data-name="contact" id="contact">
       <p className="font-bold text-lg font-mono mb-2">Get in Touch</p>
@@ -56,7 +53,6 @@ const Contact: React.FC = () => {
           <input
             type="text"
             placeholder="Name"
-            name="name"
             {...register("name", { required: true })}
             className={`input input-bordered w-full max-w-xs bg-[#040D12] focus:border-[#02aab0] focus:border-[1.5px] placeholder:font-mono ${
               errors.name ? "focus:border-rose-500" : "focus:border-[#02aab0]"
@@ -65,20 +61,19 @@ const Contact: React.FC = () => {
           <input
             type="email"
             placeholder="Email"
-            name="email"
             {...register("email", { required: true })}
             className={`input input-bordered w-full max-w-xs bg-[#040D12] focus:border-[#02aab0] focus:border-[1.5px] placeholder:font-mono ${
               errors.email ? "focus:border-rose-500" : "focus:border-[#02aab0]"
             }`}
           />
           <textarea
-            name="message"
             {...register("message", { required: true })}
             className={`textarea textarea-bordered w-full max-w-xs bg-[#040D12] focus:border-[#02aab0] focus:border-[1.5px] placeholder:font-mono ${
               errors.message
                 ? "focus:border-rose-500"
                 : "focus:border-[#02aab0]"
             }`}
+            // {...register("message", { required: true })}
             placeholder="Type Your Message "
           ></textarea>
           <button
