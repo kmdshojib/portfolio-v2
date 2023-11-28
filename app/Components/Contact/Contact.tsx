@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useCallback } from "react";
 import { useForm, FieldValues, FieldError } from "react-hook-form";
 import { toast } from "react-toastify";
 
@@ -25,22 +25,25 @@ const Contact: React.FC = () => {
     formState: { errors },
   } = useForm<FormData, CustomFormState>();
 
-  const handleMessage = async (data: FormData) => {
-    const apiEndpoint = "/api/email";
+  const handleMessage = useCallback(
+    async (data: FormData) => {
+      const apiEndpoint = "/api/email";
 
-    fetch(apiEndpoint, {
-      method: "POST",
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((response) => {
-        reset();
-        toast.success(response.message);
+      fetch(apiEndpoint, {
+        method: "POST",
+        body: JSON.stringify(data),
       })
-      .catch((err) => {
-        toast.error(err);
-      });
-  };
+        .then((res) => res.json())
+        .then((response) => {
+          reset();
+          toast.success(response.message);
+        })
+        .catch((err) => {
+          toast.error(err);
+        });
+    },
+    [reset]
+  );
 
   return (
     <div data-name="contact" id="contact">
